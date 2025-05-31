@@ -4,9 +4,9 @@ import { FaPlay, FaArrowRight, FaGraduationCap, FaUsers, FaStar } from 'react-ic
 
 const Hero = () => {
   const stats = [
-    { icon: FaUsers, value: '10,000+', label: 'Students' },
-    { icon: FaGraduationCap, value: '50+', label: 'Courses' },
-    { icon: FaStar, value: '4.9', label: 'Rating' }
+    { icon: FaUsers, value: '500+', label: 'Students Trained' },
+    { icon: FaGraduationCap, value: '15+', label: 'Expert Faculty' },
+    { icon: FaStar, value: '98%', label: 'Success Rate' }
   ];
 
   return (
@@ -27,7 +27,7 @@ const Hero = () => {
                 transition={{ delay: 0.2 }}
                 className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
               >
-                🎓 Welcome to the future of learning
+🎯 Hyderabad's Excellence, Now in Baramati
               </motion.div>
               
               <motion.h1
@@ -36,9 +36,9 @@ const Hero = () => {
                 transition={{ delay: 0.3 }}
                 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
               >
-                Learn New Skills
+                Crack JEE & NEET
                 <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Online with Experts
+                  With Tachyon
                 </span>
               </motion.h1>
               
@@ -48,8 +48,8 @@ const Hero = () => {
                 transition={{ delay: 0.4 }}
                 className="text-xl text-gray-600 leading-relaxed max-w-lg"
               >
-                Join thousands of students learning from industry experts. 
-                Master in-demand skills with hands-on projects and personalized guidance.
+                Experience Hyderabad's premier JEE & NEET coaching excellence right here in Baramati. 
+                Top educators, world-class infrastructure, proven results.
               </motion.p>
             </div>
 
@@ -65,7 +65,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                Start Learning Today
+                Join Tachyon Today
                 <FaArrowRight className="w-5 h-5" />
               </motion.button>
               

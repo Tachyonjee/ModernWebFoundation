@@ -6,23 +6,23 @@ const About = () => {
   const features = [
     {
       icon: FaLightbulb,
-      title: 'Expert-Led Courses',
-      description: 'Learn from industry professionals with years of real-world experience.'
+      title: 'Top Hyderabad Faculty',
+      description: 'Learn from premier educators who have mentored thousands of JEE & NEET toppers.'
     },
     {
       icon: FaUsers,
-      title: 'Community Support',
-      description: 'Join a vibrant community of learners and get help when you need it.'
+      title: 'Small Batch Teaching',
+      description: 'Personalized attention with optimal student-teacher ratio for maximum learning.'
     },
     {
       icon: FaAward,
-      title: 'Certified Learning',
-      description: 'Earn recognized certificates upon successful course completion.'
+      title: 'Proven Track Record',
+      description: 'Consistent results with students securing top ranks in JEE & NEET examinations.'
     },
     {
       icon: FaRocket,
-      title: 'Career Growth',
-      description: 'Advance your career with skills that employers are looking for.'
+      title: 'Modern Infrastructure',
+      description: 'State-of-the-art classrooms, digital boards, and well-equipped laboratories.'
     }
   ];
 
@@ -46,8 +46,8 @@ const About = () => {
                 transition={{ delay: 0.2 }}
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               >
-                Transform Your Career with 
-                <span className="block text-blue-600">Quality Education</span>
+                Hyderabad's Excellence 
+                <span className="block text-blue-600">Now in Baramati</span>
               </motion.h2>
               
               <motion.p
@@ -57,9 +57,9 @@ const About = () => {
                 transition={{ delay: 0.3 }}
                 className="text-lg text-gray-600 leading-relaxed"
               >
-                We believe in the power of education to transform lives. Our platform connects 
-                passionate learners with world-class instructors to create an unparalleled 
-                learning experience that prepares you for tomorrow's challenges.
+                Tachyon brings the renowned JEE & NEET coaching excellence of Hyderabad to your doorstep in Baramati. 
+                Our top educators, equipped with the best physical and digital infrastructure, ensure you get a 
+                national-level competitive exam preparation experience without leaving your hometown.
               </motion.p>
             </div>
 
