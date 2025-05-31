@@ -6,39 +6,39 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Jennifer Martinez',
-      role: 'Frontend Developer',
-      company: 'TechCorp',
+      name: 'Rahul Sharma',
+      role: 'JEE Advanced AIR 247',
+      company: 'IIT Bombay, Computer Science',
       rating: 5,
-      text: 'The React course completely transformed my career. The instructors are incredibly knowledgeable and the hands-on projects gave me real-world experience.',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b5bb?w=150'
+      text: 'Tachyon\'s faculty from Hyderabad brought the same quality teaching to Baramati. Their conceptual clarity and problem-solving approach helped me crack JEE Advanced.',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
     },
     {
       id: 2,
-      name: 'David Kim',
-      role: 'Full Stack Developer',
-      company: 'StartupXYZ',
+      name: 'Priya Patil',
+      role: 'NEET AIR 1,234',
+      company: 'AIIMS Delhi, MBBS',
       rating: 5,
-      text: 'Amazing platform with excellent content. I went from zero programming knowledge to landing my dream job in just 6 months!',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
+      text: 'The small batch size and personalized attention at Tachyon made all the difference. I could clear all my doubts and strengthen my weak areas effectively.',
+      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b5bb?w=150'
     },
     {
       id: 3,
-      name: 'Lisa Thompson',
-      role: 'UX Designer',
-      company: 'Design Studio',
+      name: 'Arjun Deshmukh',
+      role: 'JEE Main 99.8 Percentile',
+      company: 'NIT Surathkal, Mechanical',
       rating: 5,
-      text: 'The UI/UX design course exceeded my expectations. The practical projects and feedback from instructors helped me build an impressive portfolio.',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
+      text: 'The infrastructure and teaching methodology at Tachyon is exactly like the top institutes in Hyderabad. No need to leave Baramati for quality coaching!',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150'
     },
     {
       id: 4,
-      name: 'Michael Chen',
-      role: 'Data Scientist',
-      company: 'Analytics Pro',
+      name: 'Sneha Kulkarni',
+      role: 'NEET AIR 892',
+      company: 'Government Medical College',
       rating: 5,
-      text: 'The data science curriculum is comprehensive and up-to-date. I gained practical skills that I use daily in my current role.',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'
+      text: 'The regular tests and doubt-clearing sessions helped me stay on track. Tachyon\'s faculty guidance was instrumental in my NEET success.',
+      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150'
     }
   ];
 

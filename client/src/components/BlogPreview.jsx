@@ -6,33 +6,33 @@ const BlogPreview = () => {
   const blogPosts = [
     {
       id: 1,
-      title: '10 Essential JavaScript Concepts Every Developer Should Know',
-      excerpt: 'Master these fundamental JavaScript concepts to become a more effective developer and write cleaner, more efficient code.',
-      author: 'Sarah Johnson',
+      title: 'Understanding JEE Exam Pattern & Strategy',
+      excerpt: 'Complete guide to JEE Main and Advanced exam patterns, marking scheme, and effective preparation strategies for success.',
+      author: 'Tachyon Faculty',
       date: '2024-01-15',
-      readTime: '5 min read',
-      category: 'JavaScript',
-      image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400'
+      readTime: '8 min read',
+      category: 'JEE Preparation',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400'
     },
     {
       id: 2,
-      title: 'The Future of Web Development: Trends to Watch in 2024',
-      excerpt: 'Explore the latest trends shaping web development, from AI integration to new frameworks and development methodologies.',
-      author: 'Alex Chen',
+      title: 'NEET Exam Guide: Everything You Need to Know',
+      excerpt: 'Comprehensive overview of NEET exam structure, syllabus, important topics, and preparation timeline for medical aspirants.',
+      author: 'Tachyon Faculty',
       date: '2024-01-12',
-      readTime: '7 min read',
-      category: 'Web Development',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400'
+      readTime: '10 min read',
+      category: 'NEET Preparation',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400'
     },
     {
       id: 3,
-      title: 'Building Responsive Design: A Complete Guide',
-      excerpt: 'Learn how to create beautiful, responsive designs that work seamlessly across all devices and screen sizes.',
-      author: 'Emily Rodriguez',
+      title: 'Do\'s and Don\'ts During JEE/NEET Preparation',
+      excerpt: 'Essential tips and common mistakes to avoid during your JEE and NEET preparation journey for optimal results.',
+      author: 'Tachyon Faculty',
       date: '2024-01-10',
       readTime: '6 min read',
-      category: 'Design',
-      image: 'https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400'
+      category: 'Study Tips',
+      image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400'
     }
   ];
 

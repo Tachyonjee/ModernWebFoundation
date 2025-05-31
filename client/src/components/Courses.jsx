@@ -6,59 +6,59 @@ const Courses = () => {
   const courses = [
     {
       id: 1,
-      title: 'Complete React Development',
-      instructor: 'Sarah Johnson',
-      duration: '12 weeks',
-      students: 2834,
+      title: 'Foundation',
+      instructor: 'Expert Faculty Team',
+      duration: '1 Year',
+      students: 150,
       rating: 4.9,
-      price: 89,
-      image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400',
-      category: 'Web Development',
+      price: 'Contact for fees',
+      image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400',
+      category: 'Classes 8th, 9th & 10th',
       icon: FaCode,
-      level: 'Beginner to Advanced',
-      description: 'Master React from basics to advanced concepts including hooks, context, and state management.'
+      level: 'Foundation Level',
+      description: 'Strong conceptual foundation in Mathematics, Science & Mental Ability for early JEE/NEET preparation.'
     },
     {
       id: 2,
-      title: 'UI/UX Design Masterclass',
-      instructor: 'Alex Chen',
-      duration: '8 weeks',
-      students: 1923,
+      title: 'Enthuse',
+      instructor: 'Specialized Faculty',
+      duration: '1 Year',
+      students: 200,
       rating: 4.8,
-      price: 79,
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400',
-      category: 'Design',
+      price: 'Contact for fees',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400',
+      category: 'Class 11th',
       icon: FaPalette,
       level: 'Intermediate',
-      description: 'Learn design principles, user research, wireframing, and prototyping with industry tools.'
+      description: 'Comprehensive JEE Main & Advanced + NEET preparation with board exam excellence for Class 11th.'
     },
     {
       id: 3,
-      title: 'Data Science with Python',
-      instructor: 'Dr. Emily Rodriguez',
-      duration: '16 weeks',
-      students: 3156,
+      title: 'Aspire',
+      instructor: 'Senior Faculty',
+      duration: '1 Year',
+      students: 180,
       rating: 4.9,
-      price: 129,
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400',
-      category: 'Data Science',
+      price: 'Contact for fees',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400',
+      category: 'Class 12th',
       icon: FaChartBar,
-      level: 'Intermediate',
-      description: 'Comprehensive data science course covering statistics, machine learning, and data visualization.'
+      level: 'Advanced',
+      description: 'Intensive JEE Main & Advanced + NEET preparation with final board exam preparation for Class 12th.'
     },
     {
       id: 4,
-      title: 'Mobile App Development',
-      instructor: 'Michael Park',
-      duration: '10 weeks',
-      students: 1567,
+      title: 'Rank Booster',
+      instructor: 'Top Mentors',
+      duration: '1 Year',
+      students: 120,
       rating: 4.7,
-      price: 99,
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400',
-      category: 'Mobile Development',
+      price: 'Contact for fees',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
+      category: 'Droppers/Repeaters',
       icon: FaMobile,
-      level: 'Beginner',
-      description: 'Build native mobile apps for iOS and Android using React Native and modern development practices.'
+      level: 'Intensive',
+      description: 'Focused crash course for droppers targeting top ranks in JEE Main & Advanced + NEET examinations.'
     }
   ];
 
@@ -74,10 +74,10 @@ const Courses = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Popular Courses
+            Our Courses
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose from our selection of expert-led courses designed to help you master new skills and advance your career.
+            Comprehensive JEE & NEET preparation programs designed by Hyderabad's top educators, now available in Baramati.
           </p>
         </motion.div>
 
@@ -158,13 +158,22 @@ const Courses = () => {
                   </div>
                 </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
-                >
-                  Enroll Now
-                </motion.button>
+                <div className="flex gap-2 mt-6">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
+                  >
+                    Explore Course
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
+                  >
+                    Join Now
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           ))}
