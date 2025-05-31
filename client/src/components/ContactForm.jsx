@@ -159,7 +159,7 @@ const ContactForm = () => {
             <div>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <p className="text-gray-300 leading-relaxed mb-8">
-                We're here to help you on your learning journey. Reach out to us through any of the following channels:
+                Ready to start your JEE/NEET preparation journey? Contact us to learn more about admissions and course details.
               </p>
 
               <div className="space-y-6">
@@ -169,8 +169,8 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Email</h4>
-                    <p className="text-gray-300">info@eduplatform.com</p>
-                    <p className="text-gray-300">support@eduplatform.com</p>
+                    <p className="text-gray-300">info@tachyonbaramati.com</p>
+                    <p className="text-gray-300">admissions@tachyonbaramati.com</p>
                   </div>
                 </div>
 
@@ -180,8 +180,8 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Phone</h4>
-                    <p className="text-gray-300">+1 (555) 123-4567</p>
-                    <p className="text-gray-400 text-sm">Mon-Fri, 9AM-6PM EST</p>
+                    <p className="text-gray-300">+91 98765 43210</p>
+                    <p className="text-gray-400 text-sm">Mon-Sun, 9AM-8PM IST</p>
                   </div>
                 </div>
 
@@ -192,9 +192,9 @@ const ContactForm = () => {
                   <div>
                     <h4 className="font-semibold text-white mb-1">Address</h4>
                     <p className="text-gray-300">
-                      123 Learning Street<br />
-                      Education District<br />
-                      San Francisco, CA 94105
+                      Tachyon Coaching Institute<br />
+                      Near Vidya Vikas Circle<br />
+                      Baramati, Maharashtra 413102
                     </p>
                   </div>
                 </div>

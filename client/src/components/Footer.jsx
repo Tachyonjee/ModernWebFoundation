@@ -45,7 +45,7 @@ const Footer = () => {
               className="mb-6"
             >
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                EduPlatform
+                Tachyon
               </h3>
             </motion.div>
             
@@ -56,8 +56,8 @@ const Footer = () => {
               transition={{ delay: 0.1 }}
               className="text-gray-300 mb-6 max-w-md leading-relaxed"
             >
-              Empowering learners worldwide with cutting-edge courses taught by industry experts. 
-              Join our community and transform your career with skills that matter.
+              Premier JEE & NEET coaching institute bringing Hyderabad's excellence to Baramati. 
+              Top faculty, modern infrastructure, and proven results for your success.
             </motion.p>
             
             <motion.div
