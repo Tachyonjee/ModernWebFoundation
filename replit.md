@@ -20,13 +20,15 @@ Professional React web application for Tachyon, a JEE/NEET coaching institute in
   - Created GitHub Actions workflow for automated deployment
   - **FIXED**: Added `copy-redirects.js` script to ensure `_redirects` file is copied during build
   - **RESOLVED**: Netlify deployment issue - missing `_redirects` file was causing routing failures
+  - **NEW**: Created `auto_push.sh` script for automatic GitHub syncing and Netlify deployment
   - All deployment files tested and working correctly
 
 ## User Preferences
 - Target audience: JEE/NEET aspirants and parents in Baramati area
 - Branding: Emphasize "Hyderabad's Excellence, Now in Baramati"
-- Deployment preference: GitHub + Netlify workflow
+- Deployment preference: GitHub + Netlify workflow with automatic syncing
 - Communication style: Simple, non-technical explanations for deployment
+- Workflow preference: Auto-push changes from Replit to GitHub/Netlify
 
 ## Key Features
 - 4 Course Programs: Foundation (8th-10th), Enthuse (11th), Aspire (12th), Rank Booster (Droppers)
