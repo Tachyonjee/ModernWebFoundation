@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { FaClock, FaUsers, FaStar, FaPlay, FaCode, FaPalette, FaChartBar, FaMobile } from 'react-icons/fa';
 
 const Courses = () => {
+  const navigate = useNavigate();
+
   const courses = [
     {
       id: 1,
@@ -16,7 +19,7 @@ const Courses = () => {
       category: 'Classes 8th, 9th & 10th',
       icon: FaCode,
       level: 'Foundation Level',
-      description: 'Strong conceptual foundation in Mathematics, Science & Mental Ability for early JEE/NEET preparation.'
+      description: 'Strong conceptual foundation in Mathematics, Science & Mental Ability for Olympiads & early JEE/NEET preparation.'
     },
     {
       id: 2,
@@ -30,7 +33,7 @@ const Courses = () => {
       category: 'Class 11th',
       icon: FaPalette,
       level: 'Intermediate',
-      description: 'Comprehensive JEE Main & Advanced + NEET preparation with board exam excellence for Class 11th.'
+      description: 'Comprehensive  JEE Main & Advanced + NEET preparation with board exam excellence for Class 11th for both residential & day scholar students.'
     },
     {
       id: 3,
@@ -44,7 +47,7 @@ const Courses = () => {
       category: 'Class 12th',
       icon: FaChartBar,
       level: 'Advanced',
-      description: 'Intensive JEE Main & Advanced + NEET preparation with final board exam preparation for Class 12th.'
+      description: 'Intensive JEE Main & Advanced + NEET preparation with final board exam preparation for Class 12th for both residential and day scholar students .'
     },
     {
       id: 4,
@@ -61,6 +64,15 @@ const Courses = () => {
       description: 'Focused crash course for droppers targeting top ranks in JEE Main & Advanced + NEET examinations.'
     }
   ];
+
+  const handleExplore = (id) => {
+    navigate(`/course/${id}`);
+  };
+
+  const handleJoin = (id) => {
+    // For now, navigate to course page with join section anchor (could be modal instead)
+    navigate(`/course/${id}#join`);
+  };
 
   return (
     <section id="courses" className="py-20 bg-gray-50">
@@ -101,7 +113,7 @@ const Courses = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
-                
+
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
                   <span className="bg-white bg-opacity-90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2">
@@ -109,7 +121,7 @@ const Courses = () => {
                     {course.category}
                   </span>
                 </div>
-                
+
                 {/* Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
@@ -131,11 +143,11 @@ const Courses = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
                   {course.title}
                 </h3>
-                
+
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                   {course.description}
                 </p>
-                
+
                 <div className="flex items-center text-sm text-gray-500 mb-4 space-x-4">
                   <div className="flex items-center space-x-1">
                     <FaClock className="w-4 h-4" />
@@ -153,13 +165,14 @@ const Courses = () => {
                     <div className="font-medium text-gray-900">{course.instructor}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-blue-600">${course.price}</div>
+                    <div className="text-2xl font-bold text-blue-600">{course.price}</div>
                     <div className="text-sm text-gray-500">one-time</div>
                   </div>
                 </div>
 
                 <div className="flex gap-2 mt-6">
                   <motion.button
+                    onClick={() => handleExplore(course.id)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
@@ -167,6 +180,7 @@ const Courses = () => {
                     Explore Course
                   </motion.button>
                   <motion.button
+                    onClick={() => handleJoin(course.id)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
@@ -188,6 +202,7 @@ const Courses = () => {
           className="text-center mt-12"
         >
           <motion.button
+            onClick={() => navigate('/courses')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"

@@ -28,8 +28,8 @@ const Footer = () => {
     { icon: FaFacebookF, href: '#', label: 'Facebook' },
     { icon: FaTwitter, href: '#', label: 'Twitter' },
     { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
-    { icon: FaInstagram, href: '#', label: 'Instagram' },
-    { icon: FaYoutube, href: '#', label: 'YouTube' }
+    { icon: FaInstagram, href: 'https://www.instagram.com/tachyon_edu?igsh=NXM4dzc4c3I4dWV1', label: 'Instagram' },
+    { icon: FaYoutube, href: 'https://youtube.com/@tachyon-s?si=cUkEwDojLYxkcR7Q', label: 'YouTube' }
   ];
 
   return (

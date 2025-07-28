@@ -123,17 +123,17 @@ const About = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-600">JavaScript Fundamentals</span>
-                    <span className="text-green-600 font-semibold">Completed</span>
+                    <span className="text-gray-600">Attendance </span>
+                    <span className="text-green-600 font-semibold">99%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full w-full"></div>
+                    <div className="bg-green-500 h-2 rounded-full w-90%"></div>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-600">React Development</span>
+                    <span className="text-gray-600">Test Performance</span>
                     <span className="text-blue-600 font-semibold">75%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -143,22 +143,22 @@ const About = () => {
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Node.js Backend</span>
-                    <span className="text-yellow-600 font-semibold">40%</span>
+                    <span className="text-gray-600">Error Analysis</span>
+                    <span className="text-yellow-600 font-semibold">80%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-yellow-500 h-2 rounded-full w-2/5"></div>
+                    <div className="bg-yellow-500 h-2 rounded-full w-4/5"></div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="text-center p-4 bg-blue-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">12</div>
-                    <div className="text-sm text-gray-600">Courses</div>
+                    <div className="text-2xl font-bold text-blue-600">24x7</div>
+                    <div className="text-sm text-gray-600">Monitoring </div>
                   </div>
                   <div className="text-center p-4 bg-green-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">89%</div>
-                    <div className="text-sm text-gray-600">Success Rate</div>
+                    <div className="text-2xl font-bold text-green-600">100%</div>
+                    <div className="text-sm text-gray-600">Digital Infrastructure  for Progress Monitoring</div>
                   </div>
                 </div>
               </div>

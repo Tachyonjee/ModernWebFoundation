@@ -1,12 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaPlay, FaArrowRight, FaGraduationCap, FaUsers, FaStar } from 'react-icons/fa';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaPlay,
+  FaArrowRight,
+  FaGraduationCap,
+  FaUsers,
+  FaStar,
+} from "react-icons/fa";
 
 const Hero = () => {
+  const [showForm, setShowForm] = useState(false);
+
   const stats = [
-    { icon: FaUsers, value: '500+', label: 'Students Trained' },
-    { icon: FaGraduationCap, value: '15+', label: 'Expert Faculty' },
-    { icon: FaStar, value: '98%', label: 'Success Rate' }
+    { icon: FaUsers, value: "500+", label: "Students Trained" },
+    { icon: FaGraduationCap, value: "15+", label: "Expert Faculty" },
+    { icon: FaStar, value: "98%", label: "Success Rate" },
   ];
 
   return (
@@ -27,9 +35,9 @@ const Hero = () => {
                 transition={{ delay: 0.2 }}
                 className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
               >
-🎯 Hyderabad's Excellence, Now in Baramati
+                🎯 Hyderabad's Excellence, Now in Baramati
               </motion.div>
-              
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -41,15 +49,16 @@ const Hero = () => {
                   With Tachyon
                 </span>
               </motion.h1>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 className="text-xl text-gray-600 leading-relaxed max-w-lg"
               >
-                Experience Hyderabad's premier JEE & NEET coaching excellence right here in Baramati. 
-                Top educators, world-class infrastructure, proven results.
+                Experience Hyderabad's premier JEE & NEET coaching excellence
+                right here in Baramati. Top educators, world-class
+                infrastructure, proven results.
               </motion.p>
             </div>
 
@@ -63,20 +72,24 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setShowForm(!showForm)}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 Join Tachyon Today
                 <FaArrowRight className="w-5 h-5" />
               </motion.button>
-              
-              <motion.button
+
+              <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                href="https://www.youtube.com/watch?v=qfofgvSQA2c&list=PLVyvh6KkxG-C2PsyOxs2O_bDSfV1ClF8g"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 <FaPlay className="w-5 h-5" />
                 Watch Demo
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Stats */}
@@ -97,7 +110,9 @@ const Hero = () => {
                   <div className="flex justify-center mb-2">
                     <stat.icon className="w-6 h-6 text-blue-600" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+                  <div className="text-2xl font-bold text-gray-900">
+                    {stat.value}
+                  </div>
                   <div className="text-sm text-gray-600">{stat.label}</div>
                 </motion.div>
               ))}
@@ -121,24 +136,35 @@ const Hero = () => {
                         <FaGraduationCap className="w-5 h-5 text-blue-600" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900">React Development</div>
-                        <div className="text-sm text-gray-500">by Sarah Johnson</div>
+                        <div className="font-semibold text-gray-900">
+                          React Development
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          by Sarah Johnson
+                        </div>
                       </div>
                     </div>
-                    <div className="text-green-500 font-semibold">98% Complete</div>
+                    <div className="text-green-500 font-semibold">
+                      98% Complete
+                    </div>
                   </div>
-                  
+
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full" style={{ width: '98%' }}></div>
+                    <div
+                      className="bg-green-500 h-2 rounded-full"
+                      style={{ width: "98%" }}
+                    ></div>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-4 pt-4">
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
                       <div className="text-2xl font-bold text-blue-600">24</div>
                       <div className="text-sm text-gray-600">Lessons</div>
                     </div>
                     <div className="text-center p-4 bg-green-50 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600">8h</div>
+                      <div className="text-2xl font-bold text-green-600">
+                        8h
+                      </div>
                       <div className="text-sm text-gray-600">Duration</div>
                     </div>
                   </div>
