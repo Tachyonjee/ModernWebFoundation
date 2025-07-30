@@ -51,11 +51,14 @@ const Footer = () => {
                 alt="Tachyon Academy Logo" 
                 className="w-12 h-12 object-contain"
               />
-              <img 
-                src={brandLogo} 
-                alt="Tachyon Academy - Built for JEE/NEET" 
-                className="h-12 object-contain"
-              />
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
+                  <span style={{ color: '#DC2626' }}>ζ</span>
+                  <span style={{ color: '#FFFFFF' }}>achyo</span>
+                  <span style={{ color: '#DC2626' }}>η</span>
+                </span>
+                <span className="text-sm text-gray-300 font-medium">Built for JEE/NEET</span>
+              </div>
             </motion.div>
             
             <motion.p

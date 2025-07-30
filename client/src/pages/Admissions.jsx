@@ -142,11 +142,14 @@ const Admissions = () => {
               alt="Tachyon Academy Logo" 
               className="w-16 h-16 object-contain"
             />
-            <img 
-              src={brandLogo} 
-              alt="Tachyon Academy - Built for JEE/NEET" 
-              className="h-16 object-contain"
-            />
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
+                <span style={{ color: '#DC2626' }}>ζ</span>
+                <span style={{ color: '#374151' }}>achyo</span>
+                <span style={{ color: '#DC2626' }}>η</span>
+              </span>
+              <span className="text-sm text-gray-600 font-medium">Built for JEE/NEET</span>
+            </div>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
