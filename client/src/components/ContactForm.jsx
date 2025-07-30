@@ -1,228 +1,280 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaPhone, FaComment, FaGraduationCap, FaPaperPlane, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
+import { submitEnquiry, COURSE_SEGMENTS } from '../lib/api';
 
-const ContactForm = () => {
+const ContactForm = ({ 
+  segment = 'General Enquiry', 
+  title = 'Get in Touch',
+  subtitle = 'Send us your enquiry and we\'ll get back to you within 24 hours',
+  className = ''
+}) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
-    message: ''
+    phone: '',
+    message: '',
+    segment: segment
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const [status, setStatus] = useState('idle'); // idle, submitting, success, error
+  const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState([]);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Clear errors when user starts typing
+    if (errors.length > 0) {
+      setErrors([]);
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = [];
+    
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      newErrors.push('Name must be at least 2 characters long');
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email)) {
+      newErrors.push('Please provide a valid email address');
+    }
+    
+    const phoneRegex = /^(\+91|91)?[6-9]\d{9}$/;
+    const cleanPhone = formData.phone.replace(/[\s\-\(\)]/g, '');
+    if (!cleanPhone || !phoneRegex.test(cleanPhone)) {
+      newErrors.push('Please provide a valid Indian phone number');
+    }
+    
+    return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you for your message! We\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    // Validate form
+    const validationErrors = validateForm();
+    if (validationErrors.length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    
+    setStatus('submitting');
+    setErrors([]);
+    
+    try {
+      const result = await submitEnquiry(formData);
+      
+      if (result.success) {
+        setStatus('success');
+        setMessage(`Thank you! Your enquiry has been submitted successfully. Reference ID: #${result.enquiry_id}`);
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          segment: segment
+        });
+        
+        // Reset to idle after 5 seconds
+        setTimeout(() => {
+          setStatus('idle');
+          setMessage('');
+        }, 5000);
+        
+      } else {
+        setStatus('error');
+        setErrors(result.errors || [result.error || 'An error occurred']);
+      }
+    } catch (error) {
+      setStatus('error');
+      setErrors(['Network error. Please check your connection and try again.']);
+    }
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get in Touch
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Have questions about our courses? Want to discuss a custom training program? We'd love to hear from you.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
+    <div className={`bg-white rounded-xl shadow-lg overflow-hidden ${className}`}>
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-red-600 text-white p-6">
+        <h3 className="text-2xl font-bold mb-2">{title}</h3>
+        <p className="opacity-90">{subtitle}</p>
+      </div>
+      
+      {/* Form */}
+      <div className="p-6">
+        {/* Success Message */}
+        {status === 'success' && (
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg"
           >
-            <div className="bg-gray-800 rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your full name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="What's this about?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                    placeholder="Tell us more about your inquiry..."
-                  />
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <FaPaperPlane className="w-5 h-5" />
-                      Send Message
-                    </>
-                  )}
-                </motion.button>
-              </form>
+            <div className="flex items-center">
+              <FaCheckCircle className="text-green-500 mr-3" />
+              <span className="text-green-700 font-medium">{message}</span>
             </div>
           </motion.div>
-
-          {/* Contact Information */}
+        )}
+        
+        {/* Error Messages */}
+        {errors.length > 0 && (
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg"
           >
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <p className="text-gray-300 leading-relaxed mb-8">
-                Ready to start your JEE/NEET preparation journey? Contact us to learn more about admissions and course details.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FaEnvelope className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Email</h4>
-                    <p className="text-gray-300">info@tachyonbaramati.com</p>
-                    <p className="text-gray-300">admissions@tachyonbaramati.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FaPhone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Phone</h4>
-                    <p className="text-gray-300">+91 98765 43210</p>
-                    <p className="text-gray-400 text-sm">Mon-Sun, 9AM-8PM IST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FaMapMarkerAlt className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Address</h4>
-                    <p className="text-gray-300">
-                      Tachyon Coaching Institute<br />
-                      Near Vidya Vikas Circle<br />
-                      Baramati, Maharashtra 413102
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Response Time */}
-            <div className="bg-gray-800 rounded-2xl p-6">
-              <h4 className="font-semibold text-white mb-4">Response Times</h4>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-300">General Inquiries</span>
-                  <span className="text-blue-400">24-48 hours</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Technical Support</span>
-                  <span className="text-green-400">2-4 hours</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">Course Information</span>
-                  <span className="text-yellow-400">12-24 hours</span>
-                </div>
+            <div className="flex items-start">
+              <FaExclamationTriangle className="text-red-500 mr-3 mt-0.5" />
+              <div className="text-red-700">
+                {errors.length === 1 ? (
+                  <span>{errors[0]}</span>
+                ) : (
+                  <ul className="list-disc list-inside space-y-1">
+                    {errors.map((error, index) => (
+                      <li key={index}>{error}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </motion.div>
+        )}
+        
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name Field */}
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <FaUser className="inline mr-2" />
+              Full Name *
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              placeholder="Enter your full name"
+              disabled={status === 'submitting'}
+            />
+          </div>
+          
+          {/* Email Field */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <FaEnvelope className="inline mr-2" />
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              placeholder="your.email@example.com"
+              disabled={status === 'submitting'}
+            />
+          </div>
+          
+          {/* Phone Field */}
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+              <FaPhone className="inline mr-2" />
+              Phone Number *
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              placeholder="+91 98765 43210"
+              disabled={status === 'submitting'}
+            />
+          </div>
+          
+          {/* Course Interest */}
+          <div>
+            <label htmlFor="segment" className="block text-sm font-medium text-gray-700 mb-2">
+              <FaGraduationCap className="inline mr-2" />
+              Course Interest
+            </label>
+            <select
+              id="segment"
+              name="segment"
+              value={formData.segment}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              disabled={status === 'submitting'}
+            >
+              {COURSE_SEGMENTS.map((seg) => (
+                <option key={seg} value={seg}>
+                  {seg}
+                </option>
+              ))}
+            </select>
+          </div>
+          
+          {/* Message Field */}
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              <FaComment className="inline mr-2" />
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows={4}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-vertical"
+              placeholder="Tell us about your requirements, questions, or how we can help you..."
+              disabled={status === 'submitting'}
+            />
+          </div>
+          
+          {/* Submit Button */}
+          <motion.button
+            type="submit"
+            disabled={status === 'submitting'}
+            whileHover={{ scale: status === 'submitting' ? 1 : 1.02 }}
+            whileTap={{ scale: status === 'submitting' ? 1 : 0.98 }}
+            className="w-full bg-gradient-to-r from-blue-600 to-red-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-red-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          >
+            {status === 'submitting' ? (
+              <>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                <span>Submitting...</span>
+              </>
+            ) : (
+              <>
+                <FaPaperPlane />
+                <span>Submit Enquiry</span>
+              </>
+            )}
+          </motion.button>
+        </form>
+        
+        {/* Help Text */}
+        <div className="mt-6 text-center text-sm text-gray-600">
+          <p>Need immediate assistance? Call us at <strong>+91 98765 43210</strong></p>
+          <p className="mt-1">Or email: <strong>info@tachyonbaramati.com</strong></p>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

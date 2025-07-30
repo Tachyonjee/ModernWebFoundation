@@ -1,0 +1,58 @@
+You're working on the official website for Tachyon Academy (https://tachyonacademy.in), a coaching institute for JEE/NEET/Foundation courses in Baramati.
+
+🔧 Objective:
+Set up a fully working enquiry & admission form backend using Flask + SQLite, with the ability to handle multiple form submissions across the site from different segments like:
+
+1. General Enquiry Form (e.g., on Contact Us page)
+2. Admission Enquiry for JEE
+3. Admission Enquiry for NEET
+4. Admission Enquiry for Foundation
+5. Any other course-specific intake forms
+
+🎯 Requirements:
+
+1. 📄 Frontend (Form Handling):
+   - Each form will have fields: `name`, `email`, `phone`, `message`, and `segment` (e.g., "JEE", "NEET", "Foundation", "General Enquiry").
+   - If segment is not explicitly collected, infer from page/form location.
+   - POST to `/submit`
+
+2. 🧠 Backend:
+   - Use **Flask**
+   - Use **SQLite** as the DB for now (`enquiries.db`)
+   - Route: `/submit` should accept all form types and save with timestamp and segment
+   - Create `/admin` route to show all collected enquiries in table grouped or filtered by segment
+
+3. 🗃️ Database:
+   - Table: `enquiries`
+   - Fields: `id`, `name`, `email`, `phone`, `message`, `segment`, `timestamp`
+   - Auto-create table on app start
+
+4. 🌐 Routes:
+   - `/submit` → handles POST submissions
+   - `/admin` → shows tabular view of all enquiries, with optional filter dropdown by `segment`
+   - Optional: `/thankyou` page after form submission
+
+5. 🧩 Code Structure:
+   - `main.py` → entry point
+   - `routes.py` → all routes
+   - `db.py` → DB connection and init
+   - `templates/` → `index.html`, `admin.html`, `thankyou.html`
+   - `static/` → optional CSS/JS
+   - Use `render_template` and Jinja for page rendering
+
+6. 🧱 Scalable Design:
+   - Structure code to support future role-based users (admin, faculty, student)
+   - Add comments to indicate where authentication/dashboard logic can plug in later
+
+7. 🛠️ Replit Environment:
+   - Add proper `replit.nix` with Flask, SQLite, Python 3.11
+   - Ensure it works when “Run” is clicked on Replit
+
+📌 Key Notes:
+- Unify all forms across the site to hit the same `/submit` route
+- The backend should handle different types of forms but store all in a single `enquiries` table
+- Add a `segment` field so admin can filter and analyze
+- Ensure `/admin` is simple, clean, mobile-friendly, and secure for now (no login yet, but structure should allow future authentication)
+
+🎁 Output:
+- All required files: `main.py`, `routes.py`, `db.py`, `templates/index.html`, `templates/admin.html`, and `replit.nix`
