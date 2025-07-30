@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
 import logoImage from '@assets/Untitled (13)_1753896383571.png';
+import brandLogo from '@assets/ζachyoη (1)_1753896804084.png';
 
 const Footer = () => {
   const footerLinks = {
@@ -43,16 +44,13 @@ const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6 flex items-center space-x-3"
+              className="mb-6"
             >
               <img 
-                src={logoImage} 
-                alt="Tachyon Academy Logo" 
-                className="w-12 h-12 object-contain"
+                src={brandLogo} 
+                alt="Tachyon Academy - Built for JEE/NEET" 
+                className="h-16 object-contain"
               />
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Tachyon
-              </h3>
             </motion.div>
             
             <motion.p

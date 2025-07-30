@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FaCalendar, FaUser, FaArrowRight, FaClock, FaSearch } from 'react-icons/fa';
 import logoImage from '@assets/Untitled (13)_1753896383571.png';
+import brandLogo from '@assets/ζachyoη (1)_1753896804084.png';
 
 const BlogList = () => {
   const navigate = useNavigate();
@@ -92,9 +93,9 @@ const BlogList = () => {
             className="flex justify-center mb-6"
           >
             <img 
-              src={logoImage} 
-              alt="Tachyon Academy Logo" 
-              className="w-16 h-16 object-contain"
+              src={brandLogo} 
+              alt="Tachyon Academy - Built for JEE/NEET" 
+              className="h-16 object-contain"
             />
           </motion.div>
           <motion.h1

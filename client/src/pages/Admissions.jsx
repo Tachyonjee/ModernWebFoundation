@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCalendar, FaCheckCircle, FaPhone, FaEnvelope, FaMapMarkerAlt, FaDownload, FaInfoCircle } from 'react-icons/fa';
 import logoImage from '@assets/Untitled (13)_1753896383571.png';
+import brandLogo from '@assets/ζachyoη (1)_1753896804084.png';
 
 const Admissions = () => {
   const [selectedProgram, setSelectedProgram] = useState('foundation');
@@ -137,9 +138,9 @@ const Admissions = () => {
             className="flex justify-center mb-6"
           >
             <img 
-              src={logoImage} 
-              alt="Tachyon Academy Logo" 
-              className="w-20 h-20 object-contain"
+              src={brandLogo} 
+              alt="Tachyon Academy - Built for JEE/NEET" 
+              className="h-20 object-contain"
             />
           </motion.div>
           <motion.h1

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaUser } from 'react-icons/fa';
 import logoImage from '@assets/Untitled (13)_1753896383571.png';
+import brandLogo from '@assets/ζachyoη (1)_1753896804084.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,16 +56,13 @@ const Navbar = () => {
           <Link to="/">
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3"
+              className="flex items-center"
             >
               <img 
-                src={logoImage} 
-                alt="Tachyon Academy Logo" 
-                className="w-10 h-10 object-contain"
+                src={brandLogo} 
+                alt="Tachyon Academy - Built for JEE/NEET" 
+                className="h-12 object-contain"
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Tachyon
-              </span>
             </motion.div>
           </Link>
 
