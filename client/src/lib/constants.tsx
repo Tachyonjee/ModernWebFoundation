@@ -72,56 +72,56 @@ export const FEATURES = [
 ];
 
 export const STATS = [
-  { value: "10K+", label: "Active Users" },
-  { value: "500+", label: "Projects Completed" },
-  { value: "99.9%", label: "Client Satisfaction" }
+  { value: "2000+", label: "JEE/NEET Qualified" },
+  { value: "50+", label: "Expert Faculty" },
+  { value: "96%", label: "Success Rate" }
 ];
 
 export const SERVICES = [
   {
-    icon: Cloud,
-    title: "Cloud Solutions",
-    description: "Scalable cloud infrastructure and deployment strategies."
+    icon: "FaGraduationCap",
+    title: "JEE Coaching",
+    description: "Comprehensive JEE Main & Advanced preparation with expert faculty from top institutes."
   },
   {
-    icon: Database,
-    title: "Data Analytics",
-    description: "Actionable insights from your business data."
+    icon: "FaUserMd", 
+    title: "NEET Coaching",
+    description: "Complete NEET preparation with medical entrance exam specialists and proven strategies."
   },
   {
-    icon: Users,
-    title: "Consulting",
-    description: "Strategic technology consulting and digital transformation."
+    icon: "FaHome",
+    title: "Residential Programs",
+    description: "Modern hostel facilities with 24/7 academic support and mentoring in Baramati."
   }
 ];
 
 export const COMPANY_VALUES = [
   {
-    title: "Innovation First",
-    description: "Embracing latest technologies and methodologies.",
+    title: "Academic Excellence",
+    description: "Top-tier faculty from premier institutes ensuring quality education.",
     color: "bg-blue-600"
   },
   {
-    title: "Client Success",
-    description: "Your success is our primary measure of achievement.",
+    title: "Student Success", 
+    description: "Every student's success is our commitment and measure of achievement.",
     color: "bg-purple-600"
   },
   {
-    title: "Quality Delivery",
-    description: "Exceptional quality in every project we undertake.",
+    title: "Modern Infrastructure",
+    description: "State-of-the-art facilities and technology-enabled learning environment.",
     color: "bg-cyan-600"
   }
 ];
 
 export const CONTACT_INFO = {
-  address: "123 Business Street, Suite 100, San Francisco, CA 94105",
-  phone: "+1 (555) 123-4567",
-  email: "hello@webapp-pro.com"
+  address: "Tachyon Academy, Near Vidya Vikas Circle, Baramati, Maharashtra 413102",
+  phone: "+91 98765 43210",
+  email: "admissions@tachyonbaramati.com"
 };
 
 export const SOCIAL_LINKS = [
-  { name: "LinkedIn", icon: "fab fa-linkedin", url: "#" },
-  { name: "Twitter", icon: "fab fa-twitter", url: "#" },
-  { name: "GitHub", icon: "fab fa-github", url: "#" },
-  { name: "Instagram", icon: "fab fa-instagram", url: "#" }
+  { name: "LinkedIn", icon: "fab fa-linkedin", url: "https://linkedin.com/company/tachyon-baramati" },
+  { name: "Twitter", icon: "fab fa-twitter", url: "https://twitter.com/tachyonbaramati" },
+  { name: "YouTube", icon: "fab fa-youtube", url: "https://youtube.com/tachyonbaramati" },
+  { name: "Instagram", icon: "fab fa-instagram", url: "https://instagram.com/tachyonbaramati" }
 ];

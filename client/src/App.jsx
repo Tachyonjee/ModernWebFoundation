@@ -8,9 +8,12 @@ import ScrollToTop from './components/ScrollToTop'; // 👈 Import scroll handle
 
 import Home from './pages/Home';
 import Login from './pages/Login';
+import BlogList from './pages/BlogList';
+import BlogDetail from './pages/BlogDetail';
+import Admissions from './pages/Admissions';
 
 import Courses from './components/Courses';
-import CourseDetail from './components/CourseDetail'; // Course detail + join form
+import CourseDetail from './components/CourseDetail';
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/course/:courseId" element={<CourseDetail />} />
+            <Route path="/blog" element={<BlogList />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/admissions" element={<Admissions />} />
             {/* Fallback route */}
             <Route
               path="*"

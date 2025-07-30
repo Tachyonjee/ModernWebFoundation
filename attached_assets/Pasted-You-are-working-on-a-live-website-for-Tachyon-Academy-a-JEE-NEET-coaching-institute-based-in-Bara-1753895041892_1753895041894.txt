@@ -1,0 +1,36 @@
+You are working on a live website for "Tachyon Academy", a JEE/NEET coaching institute based in Baramati. 
+The site currently uses a generic UI/UX template, so many sections and buttons don’t match the coaching context. 
+I want you to:
+
+1. **Content Cleanup & Rewrite**
+   - Go through all pages and remove or rewrite any placeholder/template text so it matches our purpose: a premium JEE/NEET residential coaching institute in Baramati.
+   - Replace generic headings like "UI/UX Courses" or "Design Bootcamp" with coaching-relevant ones like "JEE/NEET Coaching for Classes 11 & 12" or "Foundation + Advanced Programs".
+   - Ensure the tone is persuasive and professional, targeting parents and students within 100 km of Baramati.
+
+2. **Make Buttons Functional**
+   - Identify all buttons (like "Learn More", "Enroll Now", "Read More") that currently do nothing.
+   - Link them to either:
+     - The appropriate section on the homepage (if internal),
+     - Or create new pages if missing (like “Admissions”, “Courses”, “Contact Us”).
+   - Add smooth scroll or navigation.
+
+3. **Fix Blogs**
+   - Currently, the blog cards aren’t clickable. Make each blog card clickable and lead to its own blog detail page.
+   - Create at least 3 starter blog pages relevant to JEE/NEET prep (e.g., “How to Prepare for JEE in 6 Months”, “Best Study Techniques for NEET”, “Life at Tachyon Baramati Campus”).
+
+4. **Navigation & Footer**
+   - Ensure all menu items and footer links point to actual pages (not `#`).
+   - If a page doesn’t exist, create a placeholder page with relevant content.
+
+5. **SEO & Branding**
+   - Update all page titles, meta descriptions, and headings to reflect: "Tachyon Academy – JEE & NEET Coaching in Baramati".
+   - Ensure consistency in colors, fonts, and branding (logo colors throughout).
+
+6. **Final Output**
+   - Provide me the updated project files with:
+     - Fixed navigation
+     - Working blogs
+     - Coaching-focused content (not UI/UX)
+     - All buttons functional and leading somewhere useful.
+
+Make sure you DON’T break the existing styling or layout. Focus on content, links, and functionality.

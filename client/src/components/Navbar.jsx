@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaUser } from 'react-icons/fa';
 
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +23,8 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '#about' },
     { name: 'Courses', path: '#courses' },
-    { name: 'Blog', path: '#blog' },
+    { name: 'Admissions', path: '/admissions' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '#contact' }
   ];
 
@@ -70,7 +72,14 @@ const Navbar = () => {
               >
                 {link.path.startsWith('#') ? (
                   <button
-                    onClick={() => scrollToSection(link.path)}
+                    onClick={() => {
+                      if (location.pathname !== '/') {
+                        navigate('/');
+                        setTimeout(() => scrollToSection(link.path), 100);
+                      } else {
+                        scrollToSection(link.path);
+                      }
+                    }}
                     className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
                   >
                     {link.name}
@@ -131,7 +140,15 @@ const Navbar = () => {
                 <div key={link.name}>
                   {link.path.startsWith('#') ? (
                     <button
-                      onClick={() => scrollToSection(link.path)}
+                      onClick={() => {
+                        setIsOpen(false);
+                        if (location.pathname !== '/') {
+                          navigate('/');
+                          setTimeout(() => scrollToSection(link.path), 100);
+                        } else {
+                          scrollToSection(link.path);
+                        }
+                      }}
                       className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 w-full text-left"
                     >
                       {link.name}

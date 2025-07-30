@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   FaPlay,
   FaArrowRight,
@@ -10,6 +11,7 @@ import {
 
 const Hero = () => {
   const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
 
   const stats = [
     { icon: FaUsers, value: "500+", label: "Students Trained" },
@@ -72,24 +74,27 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setShowForm(!showForm)}
+                onClick={() => navigate('/admissions')}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
                 Join Tachyon Today
                 <FaArrowRight className="w-5 h-5" />
               </motion.button>
 
-              <motion.a
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://www.youtube.com/watch?v=qfofgvSQA2c&list=PLVyvh6KkxG-C2PsyOxs2O_bDSfV1ClF8g"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => {
+                  const element = document.querySelector('#courses');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                <FaPlay className="w-5 h-5" />
-                Watch Demo
-              </motion.a>
+                <FaGraduationCap className="w-5 h-5" />
+                View Courses
+              </motion.button>
             </motion.div>
 
             {/* Stats */}
@@ -137,35 +142,35 @@ const Hero = () => {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">
-                          React Development
+                          JEE Main & Advanced
                         </div>
                         <div className="text-sm text-gray-500">
-                          by Sarah Johnson
+                          by Expert Faculty
                         </div>
                       </div>
                     </div>
                     <div className="text-green-500 font-semibold">
-                      98% Complete
+                      96% Success Rate
                     </div>
                   </div>
 
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
                       className="bg-green-500 h-2 rounded-full"
-                      style={{ width: "98%" }}
+                      style={{ width: "96%" }}
                     ></div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 pt-4">
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">24</div>
-                      <div className="text-sm text-gray-600">Lessons</div>
+                      <div className="text-2xl font-bold text-blue-600">2000+</div>
+                      <div className="text-sm text-gray-600">Students</div>
                     </div>
                     <div className="text-center p-4 bg-green-50 rounded-lg">
                       <div className="text-2xl font-bold text-green-600">
-                        8h
+                        50+
                       </div>
-                      <div className="text-sm text-gray-600">Duration</div>
+                      <div className="text-sm text-gray-600">Faculty</div>
                     </div>
                   </div>
                 </div>
@@ -179,7 +184,7 @@ const Hero = () => {
               >
                 <div className="flex items-center space-x-2">
                   <FaStar className="w-5 h-5 text-yellow-500" />
-                  <span className="font-semibold">4.9 Rating</span>
+                  <span className="font-semibold">Top Ranks</span>
                 </div>
               </motion.div>
 
@@ -190,7 +195,7 @@ const Hero = () => {
               >
                 <div className="flex items-center space-x-2">
                   <FaUsers className="w-5 h-5 text-blue-500" />
-                  <span className="font-semibold">1.2k Students</span>
+                  <span className="font-semibold">2000+ Students</span>
                 </div>
               </motion.div>
             </div>

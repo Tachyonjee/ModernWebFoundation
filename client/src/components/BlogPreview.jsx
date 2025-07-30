@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { FaCalendar, FaUser, FaArrowRight, FaClock } from 'react-icons/fa';
 
 const BlogPreview = () => {
+  const navigate = useNavigate();
+  
   const blogPosts = [
     {
       id: 1,
@@ -51,7 +54,7 @@ const BlogPreview = () => {
             Latest from Our Blog
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with the latest insights, tutorials, and industry trends from our expert team.
+            Expert tips, strategies, and insights from our faculty to help you excel in JEE & NEET preparation.
           </p>
         </motion.div>
 
@@ -65,7 +68,8 @@ const BlogPreview = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-gray-100 cursor-pointer"
+              onClick={() => navigate(`/blog/${post.id}`)}
             >
               {/* Post Image */}
               <div className="relative h-48 overflow-hidden">
@@ -118,6 +122,10 @@ const BlogPreview = () => {
                   <motion.button
                     whileHover={{ x: 4 }}
                     className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center space-x-1 transition-colors duration-200"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/blog/${post.id}`);
+                    }}
                   >
                     <span>Read More</span>
                     <FaArrowRight className="w-3 h-3" />
@@ -140,6 +148,7 @@ const BlogPreview = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center gap-2 mx-auto"
+            onClick={() => navigate('/blog')}
           >
             View All Articles
             <FaArrowRight className="w-4 h-4" />
