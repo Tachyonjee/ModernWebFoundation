@@ -29,7 +29,8 @@ Professional React web application for Tachyon, a JEE/NEET coaching institute in
 - Branding: Emphasize "Hyderabad's Excellence, Now in Baramati"
 - Deployment preference: GitHub + Netlify workflow with automatic syncing
 - Communication style: Simple, non-technical explanations for deployment
-- Workflow preference: Auto-push changes from Replit to GitHub/Netlify
+- Workflow preference: Manual sync from Replit to GitHub/Netlify (due to Git restrictions)
+- Sync method: Use `./auto_push.sh` or `./sync_now.sh` to push changes
 
 ## Key Features
 - 4 Course Programs: Foundation (8th-10th), Enthuse (11th), Aspire (12th), Rank Booster (Droppers)
