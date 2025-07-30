@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FaCalendar, FaUser, FaArrowRight, FaClock, FaSearch } from 'react-icons/fa';
+import logoImage from '@assets/Untitled (13)_1753896383571.png';
 
 const BlogList = () => {
   const navigate = useNavigate();
@@ -85,9 +86,21 @@ const BlogList = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex justify-center mb-6"
+          >
+            <img 
+              src={logoImage} 
+              alt="Tachyon Academy Logo" 
+              className="w-16 h-16 object-contain"
+            />
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
           >
             JEE & NEET Preparation Blog

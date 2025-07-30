@@ -12,6 +12,13 @@ Professional React web application for Tachyon, a JEE/NEET coaching institute in
 - **Deployment**: Configured for Netlify with static site generation
 
 ## Recent Changes
+- **July 30, 2025**: Brand Logo Integration & Course Content Update
+  - **ADDED**: Brand logo integration throughout website (Navbar, Footer, Admissions, Blog pages)
+  - **FIXED**: Replaced irrelevant web development/data science courses in Footer with JEE/NEET programs
+  - **UPDATED**: Footer courses section now shows Foundation, Enthuse, Aspire, and Rank Booster programs
+  - **ENHANCED**: All navigation and button functionality working correctly
+  - **COMPLETED**: Website transformation from generic template to authentic Tachyon Academy branding
+
 - **July 28, 2025**: Fixed GitHub + Netlify deployment setup
   - Created `netlify.toml` with correct build configuration
   - Updated build process to generate static files in `dist/public/`

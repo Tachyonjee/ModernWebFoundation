@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
+import logoImage from '@assets/Untitled (13)_1753896383571.png';
 
 const Footer = () => {
   const footerLinks = {
     courses: [
-      { name: 'Web Development', href: '#' },
-      { name: 'Data Science', href: '#' },
-      { name: 'UI/UX Design', href: '#' },
-      { name: 'Mobile Development', href: '#' }
+      { name: 'Foundation (8th-10th)', href: '/admissions' },
+      { name: 'Enthuse (11th Class)', href: '/admissions' },
+      { name: 'Aspire (12th Class)', href: '/admissions' },
+      { name: 'Rank Booster (Droppers)', href: '/admissions' }
     ],
     company: [
       { name: 'About Us', href: '#about' },
@@ -17,10 +18,10 @@ const Footer = () => {
       { name: 'Contact', href: '#contact' }
     ],
     support: [
-      { name: 'Help Center', href: '#' },
-      { name: 'Student Portal', href: '#' },
-      { name: 'Course Catalog', href: '#' },
-      { name: 'Refund Policy', href: '#' }
+      { name: 'Admission Process', href: '/admissions' },
+      { name: 'Student Support', href: '#contact' },
+      { name: 'Course Details', href: '#courses' },
+      { name: 'Fee Structure', href: '/admissions' }
     ]
   };
 
@@ -42,8 +43,13 @@ const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6"
+              className="mb-6 flex items-center space-x-3"
             >
+              <img 
+                src={logoImage} 
+                alt="Tachyon Academy Logo" 
+                className="w-12 h-12 object-contain"
+              />
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Tachyon
               </h3>
@@ -118,7 +124,7 @@ const Footer = () => {
           <div className="max-w-md mx-auto text-center lg:text-left lg:max-w-none">
             <h4 className="font-semibold text-lg mb-4">Stay Updated</h4>
             <p className="text-gray-300 mb-4 text-sm">
-              Subscribe to our newsletter for the latest courses, tips, and industry insights.
+              Subscribe to our newsletter for JEE/NEET preparation tips, exam updates, and success strategies.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md">
               <input
@@ -145,7 +151,7 @@ const Footer = () => {
           className="border-t border-gray-800 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-            <p>© 2024 EduPlatform. All rights reserved.</p>
+            <p>© 2024 Tachyon Academy. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a>
