@@ -90,12 +90,17 @@ const BlogList = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex justify-center mb-6"
+            className="flex justify-center items-center space-x-3 mb-6"
           >
+            <img 
+              src={logoImage} 
+              alt="Tachyon Academy Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <img 
               src={brandLogo} 
               alt="Tachyon Academy - Built for JEE/NEET" 
-              className="h-16 object-contain"
+              className="h-12 object-contain"
             />
           </motion.div>
           <motion.h1

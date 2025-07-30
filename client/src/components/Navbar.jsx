@@ -56,12 +56,17 @@ const Navbar = () => {
           <Link to="/">
             <motion.div 
               whileHover={{ scale: 1.05 }}
-              className="flex items-center"
+              className="flex items-center space-x-3"
             >
+              <img 
+                src={logoImage} 
+                alt="Tachyon Academy Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <img 
                 src={brandLogo} 
                 alt="Tachyon Academy - Built for JEE/NEET" 
-                className="h-12 object-contain"
+                className="h-8 object-contain"
               />
             </motion.div>
           </Link>

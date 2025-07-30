@@ -44,12 +44,17 @@ const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6"
+              className="mb-6 flex items-center space-x-3"
             >
+              <img 
+                src={logoImage} 
+                alt="Tachyon Academy Logo" 
+                className="w-12 h-12 object-contain"
+              />
               <img 
                 src={brandLogo} 
                 alt="Tachyon Academy - Built for JEE/NEET" 
-                className="h-16 object-contain"
+                className="h-12 object-contain"
               />
             </motion.div>
             
