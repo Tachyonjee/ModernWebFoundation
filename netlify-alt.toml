@@ -1,3 +1,5 @@
+# Alternative Netlify configuration for deployment issues
+
 [build]
   publish = "dist/public"
   command = "npm install && npx vite build && cp public/_redirects dist/public/_redirects || echo '/*    /index.html   200' > dist/public/_redirects"
@@ -13,11 +15,3 @@
 
 [build.processing]
   skip_processing = false
-
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = true
-  minify = true

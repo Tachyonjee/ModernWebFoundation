@@ -26,8 +26,17 @@ fi
 
 # Build the project to ensure everything works
 echo "🔨 Building project..."
-if npx vite build && node copy-redirects.js; then
+if npx vite build; then
     echo "✅ Build successful!"
+    
+    # Ensure _redirects file exists in build output
+    if [ -f "public/_redirects" ]; then
+        cp public/_redirects dist/public/_redirects
+        echo "📁 _redirects file copied to build output"
+    else
+        echo '/*    /index.html   200' > dist/public/_redirects
+        echo "📁 Default _redirects file created"
+    fi
 else
     echo "❌ Build failed. Please fix errors before pushing."
     exit 1

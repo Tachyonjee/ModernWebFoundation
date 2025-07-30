@@ -20,6 +20,7 @@ Professional React web application for Tachyon, a JEE/NEET coaching institute in
   - Created GitHub Actions workflow for automated deployment
   - **FIXED**: Added `copy-redirects.js` script to ensure `_redirects` file is copied during build
   - **RESOLVED**: Netlify deployment issue - missing `_redirects` file was causing routing failures
+  - **FIXED**: Updated build command to use shell commands instead of Node script for better Netlify compatibility
   - **NEW**: Created `auto_push.sh` script for automatic GitHub syncing and Netlify deployment
   - All deployment files tested and working correctly
 
