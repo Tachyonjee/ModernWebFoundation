@@ -66,7 +66,7 @@ const Navbar = () => {
               <div className="flex flex-col">
                 <span className="text-xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
                   <span style={{ color: '#DC2626' }}>ζ</span>
-                  <span style={{ color: '#FFFFFF', textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>achyo</span>
+                  <span style={{ color: '#2563EB' }}>achyo</span>
                   <span style={{ color: '#DC2626' }}>η</span>
                 </span>
                 <span className="text-xs text-gray-600 font-medium">Built for JEE/NEET</span>
